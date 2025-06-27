@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,10 @@
 		48B0D4152BD295E100A71AE0 /* ProductsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3AF761442E0F3ADF0040C3B5 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		48B0D3E62BD2941D00A71AE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -70,6 +74,7 @@
 		48B0D3EB2BD2941D00A71AE0 /* TechTaste */ = {
 			isa = PBXGroup;
 			children = (
+				3AF761442E0F3ADF0040C3B5 /* ViewModels */,
 				48B0D4122BD2959200A71AE0 /* Utils */,
 				48B0D40F2BD2956100A71AE0 /* Repository */,
 				48B0D4082BD294FA00A71AE0 /* Extensions */,
@@ -158,6 +163,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3AF761442E0F3ADF0040C3B5 /* ViewModels */,
 			);
 			name = TechTaste;
 			productName = TechTaste;

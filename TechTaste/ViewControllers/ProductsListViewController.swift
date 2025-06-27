@@ -9,11 +9,12 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
-    private var products: [Product] = []
-    private var productsRepository: ProductsRepository
+//    private var products: [Product] = []
+//    private var productsRepository: ProductsRepository
+    private var viewModel: ProductsListViewModel
     
-    init(productsRepository: ProductsRepository = ProductsRepository()) {
-        self.productsRepository = productsRepository
+    init(viewModel: ProductsListViewModel = ProductsListViewModel()) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,20 +67,19 @@ class ProductsListViewController: UIViewController {
     }
     
     private func getProducts() {
-        guard let loadedProducts = productsRepository.loadProducts() else { return }
-        products = loadedProducts
-        tableView.reloadData()
+        self.viewModel.getAllProducts()
+        self.tableView.reloadData()
     }
 }
 
 extension ProductsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return self.viewModel.getNumberOfRowsOfTableView()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductsListTableViewCell else { return UITableViewCell() }
-        let product = products[indexPath.row]
+        let product = self.viewModel.products[indexPath.row]
         cell.configure(with: product)
         return cell
     }
