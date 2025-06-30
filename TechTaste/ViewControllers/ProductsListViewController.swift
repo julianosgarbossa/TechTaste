@@ -9,7 +9,6 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
-//    private var productsRepository: ProductsRepository
     private var viewModel: ProductsListViewModel
     private var products: [Product] = []
     
@@ -29,6 +28,14 @@ class ProductsListViewController: UIViewController {
         tableView.register(ProductsListTableViewCell.self, forCellReuseIdentifier: "ProductCell")
         tableView.showsVerticalScrollIndicator = false
         return tableView
+    }()
+    
+    private var activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView(style: .large)
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.color = .white
+        activityIndicatorView.startAnimating()
+        return activityIndicatorView
     }()
 
     override func viewDidLoad() {
@@ -55,6 +62,7 @@ class ProductsListViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(tableView)
+        view.addSubview(activityIndicatorView)
     }
     
     private func setupConstraints() {
@@ -64,6 +72,9 @@ class ProductsListViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24.0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24.0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
     
@@ -74,6 +85,7 @@ class ProductsListViewController: UIViewController {
     
     private func bindViewModel() {
         bindProducts()
+        bindLoading()
     }
     
     private func bindProducts() {
@@ -84,6 +96,18 @@ class ProductsListViewController: UIViewController {
             self.products = products
             
             self.tableView.reloadData()
+        }
+    }
+    
+    private func bindLoading() {
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let self = self,
+                  let isLoading else { return }
+            if isLoading {
+                self.activityIndicatorView.startAnimating()
+            } else {
+                self.activityIndicatorView.stopAnimating()
+            }
         }
     }
 }

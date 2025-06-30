@@ -9,6 +9,7 @@ import Foundation
 
 class ProductsListViewModel {
     var products: Observable<[Product]> = Observable(value: [])
+    var isLoading: Observable<Bool> = Observable(value: false)
     private var networkingManager: NetworkingManager
     
     init(networkingManager: NetworkingManager = NetworkingManager()) {
@@ -16,8 +17,10 @@ class ProductsListViewModel {
     }
     
     func getAllProducts() {
+        isLoading.value = true
         networkingManager.getProductsList { [weak self] result in
             guard let self = self else { return }
+            self.isLoading.value = false
             switch result {
             case .success(let products):
                 DispatchQueue.main.async {
