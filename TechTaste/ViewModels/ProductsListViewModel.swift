@@ -10,6 +10,7 @@ import Foundation
 class ProductsListViewModel {
     var products: Observable<[Product]> = Observable(value: [])
     var isLoading: Observable<Bool> = Observable(value: false)
+    var cellDataSource: Observable<[ProductTableCellViewModel]> = Observable(value: [])
     private var networkingManager: NetworkingManager
     
     init(networkingManager: NetworkingManager = NetworkingManager()) {
@@ -25,6 +26,9 @@ class ProductsListViewModel {
             case .success(let products):
                 DispatchQueue.main.async {
                     self.products.value = products
+                    self.cellDataSource.value = products.compactMap({ product in
+                        ProductTableCellViewModel(product: product)
+                    })
                 }
             case .failure(let error):
                 print("Ocorreu um erro ao obter os produtos: \(error.localizedDescription)")
@@ -33,6 +37,6 @@ class ProductsListViewModel {
     }
     
     func getNumberOfRowsOfTableView() -> Int {
-        return products.value?.count ?? 0
+        return cellDataSource.value?.count ?? 0
     }
 }

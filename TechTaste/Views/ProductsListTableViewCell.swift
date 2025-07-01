@@ -108,11 +108,11 @@ class ProductsListTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(with product: Product) {
-        productImageView.image = UIImage(named: product.image)
-        productNameLabel.text = product.name
-        productDescriptionLabel.text = product.description
-        productPriceLabel.text = product.formattedPrice
+    func configure(with viewModel: ProductTableCellViewModel) {
+        productImageView.image = UIImage(named: viewModel.productImage)
+        productNameLabel.text = viewModel.productName
+        productDescriptionLabel.text = viewModel.productDescription
+        productPriceLabel.text = viewModel.productFormattedPrice
     }
 
 }
