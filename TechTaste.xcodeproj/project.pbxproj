@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A63A02F2E13286F001F1FA7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63A02E2E13286F001F1FA7 /* Observable.swift */; };
+		3A63A0352E146F2A001F1FA7 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63A0342E146F2A001F1FA7 /* ProductDetailViewController.swift */; };
 		48B0D3ED2BD2941D00A71AE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B0D3EC2BD2941D00A71AE0 /* AppDelegate.swift */; };
 		48B0D3EF2BD2941D00A71AE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B0D3EE2BD2941D00A71AE0 /* SceneDelegate.swift */; };
 		48B0D3F12BD2941D00A71AE0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B0D3F02BD2941D00A71AE0 /* HomeViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		3A63A02E2E13286F001F1FA7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		3A63A0342E146F2A001F1FA7 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		48B0D3E92BD2941D00A71AE0 /* TechTaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B0D3EC2BD2941D00A71AE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48B0D3EE2BD2941D00A71AE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				48B0D3F02BD2941D00A71AE0 /* HomeViewController.swift */,
 				48B0D4042BD2947E00A71AE0 /* ProductsListViewController.swift */,
+				3A63A0342E146F2A001F1FA7 /* ProductDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				3A63A02F2E13286F001F1FA7 /* Observable.swift in Sources */,
 				48B0D4052BD2947E00A71AE0 /* ProductsListViewController.swift in Sources */,
+				3A63A0352E146F2A001F1FA7 /* ProductDetailViewController.swift in Sources */,
 				48B0D3F12BD2941D00A71AE0 /* HomeViewController.swift in Sources */,
 				48B0D4072BD294EE00A71AE0 /* Product.swift in Sources */,
 				48B0D3ED2BD2941D00A71AE0 /* AppDelegate.swift in Sources */,

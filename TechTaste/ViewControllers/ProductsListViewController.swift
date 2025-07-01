@@ -40,12 +40,15 @@ class ProductsListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupUI()
         addSubviews()
         setupConstraints()
         bindViewModel()
         getProducts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupNavigationBar()
     }
     
     private func setupNavigationBar() {
@@ -123,5 +126,9 @@ extension ProductsListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let product = viewModel.getProductById(id: cellDataSource[indexPath.row].productId) else { return }
+        let productDetailViewModel = ProductDetailViewModel(product: product)
+        let productDatailViewController = ProductDetailViewController(viewModel: productDetailViewModel)
+        navigationController?.pushViewController(productDatailViewController, animated: true)
     }
 }

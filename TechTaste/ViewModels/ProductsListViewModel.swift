@@ -39,4 +39,9 @@ class ProductsListViewModel {
     func getNumberOfRowsOfTableView() -> Int {
         return cellDataSource.value?.count ?? 0
     }
+    
+    func getProductById(id: Int) -> Product? {
+        guard let product = products.value?.first(where: { $0.id == id }) else { return nil }
+        return product
+    }
 }
