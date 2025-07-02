@@ -9,7 +9,7 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: ProductsListCoordinator?
     
     private var viewModel: ProductsListViewModel
     private var cellDataSource: [ProductTableCellViewModel] = []

@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: HomeCoordinator?
     
     private lazy var bannerImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: AssetsConstants.banner))
