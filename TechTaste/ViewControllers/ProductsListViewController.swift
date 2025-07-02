@@ -9,6 +9,8 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
+    weak var coordinator: MainCoordinator?
+    
     private var viewModel: ProductsListViewModel
     private var cellDataSource: [ProductTableCellViewModel] = []
     
@@ -127,8 +129,6 @@ extension ProductsListViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let product = viewModel.getProductById(id: cellDataSource[indexPath.row].productId) else { return }
-        let productDetailViewModel = ProductDetailViewModel(product: product)
-        let productDatailViewController = ProductDetailViewController(viewModel: productDetailViewModel)
-        navigationController?.pushViewController(productDatailViewController, animated: true)
+        coordinator?.showProductDetail(for: product)
     }
 }

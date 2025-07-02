@@ -46,6 +46,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3A63A02B2E131EF4001F1FA7 /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
+		3A63A0382E156FEF001F1FA7 /* Coordinators */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Coordinators; sourceTree = "<group>"; };
 		3AF761442E0F3ADF0040C3B5 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -79,6 +80,7 @@
 		48B0D3EB2BD2941D00A71AE0 /* TechTaste */ = {
 			isa = PBXGroup;
 			children = (
+				3A63A0382E156FEF001F1FA7 /* Coordinators */,
 				3A63A02B2E131EF4001F1FA7 /* Networking */,
 				3AF761442E0F3ADF0040C3B5 /* ViewModels */,
 				48B0D4122BD2959200A71AE0 /* Utils */,
@@ -174,6 +176,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				3A63A02B2E131EF4001F1FA7 /* Networking */,
+				3A63A0382E156FEF001F1FA7 /* Coordinators */,
 				3AF761442E0F3ADF0040C3B5 /* ViewModels */,
 			);
 			name = TechTaste;

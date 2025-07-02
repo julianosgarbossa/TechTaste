@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    weak var coordinator: MainCoordinator?
+    
     private lazy var bannerImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: AssetsConstants.banner))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,9 +88,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        let productsListVC = ProductsListViewController()
-        navigationController?.pushViewController(productsListVC, animated: true)
+        coordinator?.showProducstsList()
     }
-    
 }
 
